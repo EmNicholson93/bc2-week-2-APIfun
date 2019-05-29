@@ -1,0 +1,7 @@
+.airbender-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    list-style: none;
+    text-align: center;
+}
