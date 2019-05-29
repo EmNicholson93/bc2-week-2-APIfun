@@ -4,10 +4,17 @@ class AirbenderChar extends Component {
 
     renderTemplate() {
         const char = this.props.char;
-        return /*html*/`
-            <li>
+        if(char.photoUrl) {
+            return /*html*/ `<li class="char">
                 <h2>${char.name}</h2>
                 <img src="${char.photoUrl}">
+            </li>
+            `;
+        }
+        return /*html*/`
+            <li class="char">
+                <h2>${char.name}</h2>
+                <img src="./assets/placeholder.jpg">
             </li>
         `;
     }

@@ -13,7 +13,7 @@ test('renders template from data', assert => {
     const rendered = airbenderChar.renderTemplate();
     //assert
     assert.htmlEqual(rendered, /*html*/`
-    <li>
+    <li class="char">
         <h2>Aang</h2>
         <img src="https://vignette.wikia.nocookie.net/avatar/images/a/ae/Aang_at_Jasmine_Dragon.png/revision/latest?cb=20130612174003">
     </li>
