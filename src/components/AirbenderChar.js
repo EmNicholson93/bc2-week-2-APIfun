@@ -7,7 +7,7 @@ class AirbenderChar extends Component {
         return /*html*/`
             <li>
                 <h2>${char.name}</h2>
-                <img src="${char.image}">
+                <img src="${char.photoUrl}">
             </li>
         `;
     }

@@ -1,13 +1,22 @@
 import Component from './Component.js';
+import AirbenderChar from './AirbenderChar.js';
 
 class AirbenderList extends Component {
 
+    render() {
+        const list = this.renderDOM();
+
+        this.props.chars.forEach(char => {
+            const airbenderChar = new AirbenderChar({ char });
+            list.appendChild(airbenderChar.render());
+        });
+
+        return list;
+    }
     renderTemplate() {
         return /*html*/`
             <ul class="airbender-list">
                 <li>
-                    <h2>name: Aang</h2>
-                    <img src="https://vignette.wikia.nocookie.net/avatar/images/a/ae/Aang_at_Jasmine_Dragon.png/revision/latest?cb=20130612174003">
                 </li>
             </ul>
         `;
