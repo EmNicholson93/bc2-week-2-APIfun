@@ -1,0 +1,10 @@
+.char {
+    border: 2px solid blue;
+    margin:10px 0 0 10px;  
+    width:(n + 1);
+}
+
+.char img {
+    width: 380px;
+    margin: auto;
+}
