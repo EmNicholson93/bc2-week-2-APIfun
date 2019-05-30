@@ -21,17 +21,36 @@ class App extends Component {
 
         const loading = new Loading({ loading: true });
         main.appendChild(loading.render());
+        function loadChar() {
+            const params = window.location.hash.slice(1);
+            const searchParams = new URLSearchParams(params);
+            let type = '';
 
-        api.getCharacters()
-            .then(chars => {
-                airbenderList.update({ chars });
-            })
-            .catch(err => {
-                console.log(err);
-            })
-            .finally(() => {
-                loading.update({ loading: false });
-            });
+            if(searchParams.get('allies')) {
+                type = 'allies';
+            } else if(searchParams.get('enemies')) {
+                type = 'enemies';
+            }
+
+            const frenemy = searchParams.get(type);
+
+            loading.update({ loading: true });
+
+            api.getChar(frenemy, type)
+                .then(chars => {
+                    airbenderList.update({ chars });
+                })
+
+                .finally(() => {
+                    loading.update({ loading: false });
+                });
+        }
+
+        loadChar();
+
+        window.addEventListener('hashchange', () => {
+            loadChar();
+        });
         return dom;
     }
 
