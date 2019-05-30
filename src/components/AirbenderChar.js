@@ -12,7 +12,8 @@ class AirbenderChar extends Component {
         enemyLink.set('enemies', char.name);
 
         if(char.photoUrl) {
-            return /*html*/ `<li class="char">
+            return /*html*/ `
+            <li class="char">
                 <h2>${char.name}</h2>
                 <img src="${char.photoUrl}">
                 <p><a href="#${allyLink.toString()}">Allies</a></p>
