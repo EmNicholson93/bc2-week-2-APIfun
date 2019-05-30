@@ -13,12 +13,12 @@ class AirbenderChar extends Component {
 
         if(char.photoUrl) {
             return /*html*/ `
-            <li class="char">
-                <h2>${char.name}</h2>
-                <img src="${char.photoUrl}">
-                <p><a href="#${allyLink.toString()}">Allies</a></p>
-                <p><a href="#${enemyLink.toString()}">Enemies</a></p>
-            </li>
+                <li class="char">
+                    <h2>${char.name}</h2>
+                    <img src="${char.photoUrl}">
+                    <p><a href="#${allyLink.toString()}">Allies</a></p>
+                    <p><a href="#${enemyLink.toString()}">Enemies</a></p>
+                </li>
             `;
         }
         return /*html*/`
